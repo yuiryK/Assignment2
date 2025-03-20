@@ -5,6 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TriangleTest {
     @Test
+    void testTriangleSideLimit() {
+        assertEquals("Triangle side length exceeds limit of 200", Triangle.classify(201, 50, 50));
+        assertEquals("Triangle side length exceeds limit of 200", Triangle.classify(50, 201, 50));
+        assertEquals("Triangle side length exceeds limit of 200", Triangle.classify(50, 50, 201));
+    }
+    @Test
     void testEquilateral() {
         assertEquals("Equilateral", Triangle.classify(3, 3, 3));
     }
